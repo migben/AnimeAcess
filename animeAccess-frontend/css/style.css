@@ -1,3 +1,118 @@
-h1 {
-    color: red;
+body {
+    background-color: #381460;
+    /* height: 100%; */
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+html {
+    height: 100%;
+}
+
+p {
+    margin-top: 10px;
+}
+
+button {
+    position: relative;
+    padding: 5px 20px;
+    background-color: #fe346e;
+    border: none;
+    border-radius: 5px;
+    height: 3rem;
+    width: max-content;
+    color: whitesmoke;
+    font-size: 18px;
+    justify-self: center;
+}
+
+button:hover {
+    background-color: rgb(48, 48, 55);
+    border: #fe346e solid 2px;
+    color: #fff;
+    cursor: pointer;
+}
+
+img {
+    margin-top: 5px;
+    width: 15%;
+}
+
+hr {
+    width:100px;
+    margin: auto;
+    border-top: 10px dotted #fe346e;
+    background-color: transparent;
+    padding-bottom: 20px;   
+}
+
+h2 a {
+    color: #fe346e;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+h2 a:hover {
+    color: #fff;
+}
+
+
+ /* bulma card */
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-p {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.search{
+    margin-left: 10px;
+}
+
+#anime-collection {
+    margin-top: 10px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+
+
+/* no used yet */
+.add-series-form {
+    width: 80%
+}
+
+/* footing styling */
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    padding-bottom: 2.5rem;
+    /* Footer height */
+}
+
+#footer {
+    position: static;
+    bottom: 0;
+    width: 100%;
+    height: 3rem;
+    color: #fff;
+    text-align: center;
+    background-color: #fe346e;
+    /* Footer height */
+}
+
+
+#footer p {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }

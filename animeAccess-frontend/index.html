@@ -1,17 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AnimeAccess - Live!</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Mod 3 Final Project</title>
-</head>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+  </head>
 
-<body>
-    <h1>Welcome to the Internet 🤠</h1>
+  <body>
+    <div id="page-container">
+      <div id="content-wrap">
+        <!-- all other page content -->
+        <section style="background-color: #fe346e;" class="hero">
+          <div class="hero-body">
+            <div class="field">
+              <div class="control center">
+                <input
+                  style="width: 30%;"
+                  type="text"
+                  class="input is-small is-rounded"
+                />
+                <button class="button is-dark search" type="submit">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
 
-    <script defer src="src/index.js" defer></script>
-</body>
+        <p style="text-align:center; color: #fff">
+          Add a new Series =>
+          <button id="new-toy-btn">New</button>
+        </p>
 
+        <div id="anime-collection">
+          <div class="series">
+              <img src="https://i.pinimg.com/originals/02/79/a4/0279a4297de3beb05fe2b96fdb141c5c.jpg"
+                  alt="Anime Series" />
+              <h2>
+                  <a href="#">The Teen Ninja: Naruto </a>
+              </h2>
+              <p id="rating">Rating: 4.3 / 5.0</p>
+              <br>
+              <span id="star-rating">⭐️⭐️⭐️⭐️</span>
+              <p id="series-genre">Genre: Shounen</p>
+              <p class="center-p">
+                  Naruto Shippuden is the second series of Naruto anime that follows
+                  the titular hero on his quest to become Hokage. ... While the
+                  original series was filled with serious issues, Shippuden dialed
+                  everything up a notch, thrusting Naruto into a world of war, death,
+                  and betrayal.
+              </p>
+              <br />
+              <hr />
+          </div>
+
+          <div class="series">
+              <img src="https://i.pinimg.com/originals/02/79/a4/0279a4297de3beb05fe2b96fdb141c5c.jpg"
+                  alt="Anime Series" />
+              <h2>
+                  <b><a href="#">The Teen Ninja: Naruto</a></b>
+              </h2>
+              <p id="rating">Rating: 4.3 / 5.0</p>
+              <br>
+              <span id="star-rating">⭐️⭐️⭐️⭐️</span>
+              <p id="series-genre">Genre: Shounen</p>
+              <p class="center-p">
+                  Naruto Shippuden is the second series of Naruto anime that follows
+                  the titular hero on his quest to become Hokage. ... While the
+                  original series was filled with serious issues, Shippuden dialed
+                  everything up a notch, thrusting Naruto into a world of war, death,
+                  and betrayal.
+              </p>
+              <br />
+              <hr />
+          </div>
+          
+        </div>
+
+      </div>
+      <footer id="footer">
+        <p>Made with 💜 By Miguel</p>
+      </footer>
+    </div>
+
+    <script defer src="src/index.js"></script>
+  </body>
 </html>
