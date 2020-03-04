@@ -8,8 +8,10 @@ const form = document.querySelector("form")
 const fetchAnimes = () =>{
     return fetch(seriesUrl)
             .then( res => res.json())
-            .then( animes => animes.forEach( anime => slapItOnTheDom(anime)  ))
 }
+
+fetchAnimes()
+    .then(animes => animes.forEach(anime => slapItOnTheDom(anime)))
 
 
 const slapItOnTheDom = (animeObj) =>{
@@ -23,7 +25,34 @@ const slapItOnTheDom = (animeObj) =>{
     const spanStar = document.createElement("span")
     const pGenre = document.createElement("p")
     const pCenter = document.createElement("p")
+    const hrSeries = document.createElement("hr")
+    const animeUpdateBtn = document.createElement("button")
+    const animeDeleteBtn = document.createElement("button")
 
+    divSeries.setAttribute("class", "series")
+    imgCover.setAttribute("src", animeObj.image_url)
+    pRating.setAttribute("id", "rating")
+    spanStar.setAttribute("id", "star-rating")
+    pGenre.setAttribute("id","series-genre")
+    pCenter.setAttribute("class", "center-p")
+    animeDeleteBtn.setAttribute("id", `anime-delete-btn-${animeObj.id}`)
+    animeUpdateBtn.setAttribute("id", `anime-update-btn-${animeObj.id}`)
 
+    aTitle.innerText = animeObj.title
+    pRating.innerText = `Rating: ${animeObj.rating}`
+    spanStar.innerText = "⭐️⭐️⭐️⭐️"
+    pGenre.innerText = `Genre: Shounen`
+    pCenter.innerText = animeObj.description
+    animeDeleteBtn.innerText = "Delete"
+    animeUpdateBtn.innerText = "Update"
+
+    h2Title.append(aTitle)
+    divSeries.append(imgCover,h2Title,pRating,brSeries,spanStar,pGenre,pCenter,brSeries, animeUpdateBtn ,animeDeleteBtn, hrSeries)
+
+    collection.append(divSeries)
+
+    // animeDeleteBtn.addEventListener("click", () => deleteForever(animeObj))
+
+    // animeUpdateBtn.addEventListener("click", (event) => showForm(animeObj))
 
 }
