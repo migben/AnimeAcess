@@ -57,6 +57,8 @@ const slapItOnTheDom = (animeObj) =>{
 
     collection.prepend(divSeries)
 
+
+    // event listeners
     animeDeleteBtn.addEventListener("click", () => deleteThis(animeObj))
 
     // animeUpdateBtn.addEventListener("click", (event) => showForm(animeObj))
@@ -84,7 +86,7 @@ newAnimeForm.addEventListener("submit", e => {
     e.preventDefault()
 
     let data = getData(e)
-
+    let modal = document.querySelector("#modal")
 
     return fetch(seriesUrl, {
             method: "POST",
@@ -102,7 +104,8 @@ newAnimeForm.addEventListener("submit", e => {
         .then(res => res.json())
         .then(anime => {
             console.log(anime);
-
+            
+            modal.style.display = "none"
             e.target.reset()
             slapItOnTheDom(anime)
         })
