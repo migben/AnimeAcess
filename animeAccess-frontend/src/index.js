@@ -55,17 +55,44 @@ const slapItOnTheDom = (animeObj) =>{
     h2Title.append(aTitle)
     divSeries.append(imgCover,h2Title,pRating,brSeries,spanStar,pGenre,pCenter,brSeries, animeUpdateBtn ,animeDeleteBtn, hrSeries)
 
-    collection.append(divSeries)
+    collection.prepend(divSeries)
 
     // animeDeleteBtn.addEventListener("click", () => deleteForever(animeObj))
 
     // animeUpdateBtn.addEventListener("click", (event) => showForm(animeObj))
 
-    newAnimeForm.addEventListener("submit", e => {
-        postSeries(e)
-    })
+    
 
 }
+
+
+newAnimeForm.addEventListener("submit", e => {
+    e.preventDefault()
+
+    let data = getData(e)
+
+
+    return fetch(seriesUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                title: data.title,
+                image_url: data.image,
+                rating: data.rating,
+                description: data.description
+            })
+        })
+        .then(res => res.json())
+        .then(anime => {
+            console.log(anime);
+
+            e.target.reset()
+            slapItOnTheDom(anime)
+        })
+})
 
 const getData = event => {
     let title = event.target.title.value
@@ -79,23 +106,4 @@ const getData = event => {
         rating,
         description
     }
-}
-
-const postSeries = (e) => {
-    e.preventDefault()
-
-    let data = getData(e)
-
-    return fetch(seriesUrl, {
-        method: "POST",
-        headers: {
-            "Content-Type": 'application/json',
-            'Accept': 'application/json'
-        },
-        body: JSON.stringify(data)
-            .then(res => res.json())
-            .then(anime => {
-                slapItOnTheDom(anime)
-            })
-    })
 }
