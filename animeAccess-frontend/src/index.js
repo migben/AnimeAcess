@@ -2,8 +2,11 @@
 
 const collection = document.querySelector("#anime-collection")
 const seriesUrl = "http://localhost:3000/animes"
+const newAnimeForm = document.querySelector("#new-anime-form")
 
-const form = document.querySelector("form")
+
+
+// const form = document.querySelector("form")
 
 const fetchAnimes = () =>{
     return fetch(seriesUrl)
@@ -12,6 +15,8 @@ const fetchAnimes = () =>{
 
 fetchAnimes()
     .then(animes => animes.forEach(anime => slapItOnTheDom(anime)))
+
+
 
 
 const slapItOnTheDom = (animeObj) =>{
@@ -46,6 +51,7 @@ const slapItOnTheDom = (animeObj) =>{
     animeDeleteBtn.innerText = "Delete"
     animeUpdateBtn.innerText = "Update"
 
+    
     h2Title.append(aTitle)
     divSeries.append(imgCover,h2Title,pRating,brSeries,spanStar,pGenre,pCenter,brSeries, animeUpdateBtn ,animeDeleteBtn, hrSeries)
 
@@ -55,4 +61,41 @@ const slapItOnTheDom = (animeObj) =>{
 
     // animeUpdateBtn.addEventListener("click", (event) => showForm(animeObj))
 
+    newAnimeForm.addEventListener("submit", e => {
+        postSeries(e)
+    })
+
+}
+
+const getData = event => {
+    let title = event.target.title.value
+    let image = event.target.image.value
+    let rating = event.target.rating.value
+    let description = event.target.description.value
+
+    return {
+        title,
+        image,
+        rating,
+        description
+    }
+}
+
+const postSeries = (e) => {
+    e.preventDefault()
+
+    let data = getData(e)
+
+    return fetch(seriesUrl, {
+        method: "POST",
+        headers: {
+            "Content-Type": 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
+            .then(res => res.json())
+            .then(anime => {
+                slapItOnTheDom(anime)
+            })
+    })
 }

@@ -14,7 +14,8 @@ p {
     margin-top: 10px;
 }
 
-button {
+button,
+input[type=submit] {
     position: relative;
     padding: 5px 20px;
     background-color: #fe346e;

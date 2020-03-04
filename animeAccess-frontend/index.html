@@ -41,6 +41,21 @@
             <button id="new-anime-btn">New</button>
         </div>
 
+        <div id="modal" style="display: none;" data-action="close">
+            <form id="new-anime-form">
+                <h1>Create Series</h1>
+                <label for="title">Title</label>
+                <input id="title" type="text" name="title">
+                <label for="image_url">Link: </label>
+                <input id="image" type="url" name="image_url">
+                <label for="rating">Rating: </label>
+                <input id="rating" type="number" name="rating">
+                <label for="description">Description: </label>
+                <input id="description" type="text" name="description">
+                <input type="submit" value="Create">
+            </form>
+        </div>
+
         <div id="anime-collection">
           <!-- <div class="series">
               <img src="https://i.pinimg.com/originals/02/79/a4/0279a4297de3beb05fe2b96fdb141c5c.jpg"
@@ -86,12 +101,16 @@
           
         </div>
 
+        
+        
+
       </div>
       <footer id="footer">
         <p>Made with 💜 By Miguel &copy;</p>
       </footer>
     </div>
 
+    <script defer src="src/modal.js"></script>
     <script defer src="src/index.js"></script>
   </body>
 </html>
