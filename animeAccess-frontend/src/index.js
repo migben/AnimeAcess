@@ -2,7 +2,7 @@
 
 const collection = document.querySelector("#anime-collection")
 const seriesUrl = "http://localhost:3000/animes"
-const newAnimeForm = document.querySelector("#new-anime-form")
+const newAnimeFormBtn = document.querySelector("#new-anime-form")
 
 
 
@@ -65,7 +65,7 @@ const slapItOnTheDom = (animeObj) =>{
 
     
 
-}
+} // END OF THE RENDER TO THE DOM FUNCTION
 
 const deleteThis = animeObj => {
      let seriesBye = document.getElementById(`series-${animeObj.id}`)
@@ -82,7 +82,7 @@ const deleteThis = animeObj => {
 }
 
 
-newAnimeForm.addEventListener("submit", e => {
+newAnimeFormBtn.addEventListener("submit", e => {
     e.preventDefault()
 
     let data = getData(e)

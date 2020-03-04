@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     color: #fff;
+    text-align: center;
 }
 
 html {
@@ -81,11 +82,8 @@ h2 a:hover {
 #anime-collection {
     margin-top: 10px;
     padding-top: 10px;
-    text-align: center;
+
 }
-
-
-
 
 /* no used yet */
 .add-series-form {
