@@ -5,7 +5,7 @@ class CreateAnimes < ActiveRecord::Migration[6.0]
       t.string :image_url
       t.float :rating
       t.string :description
-      t.boolean :like
+      t.integer :like
       t.belongs_to :user, null: false, foreign_key: true
 
       t.timestamps

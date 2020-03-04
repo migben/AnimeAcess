@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_03_03_164140) do
     t.string "image_url"
     t.float "rating"
     t.string "description"
-    t.boolean "like"
+    t.integer "like"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
