@@ -34,7 +34,7 @@ const slapItOnTheDom = (animeObj) =>{
     const animeUpdateBtn = document.createElement("button")
     const animeDeleteBtn = document.createElement("button")
 
-    divSeries.setAttribute("class", "series")
+    divSeries.setAttribute("id", `series-${animeObj.id}`)
     imgCover.setAttribute("src", animeObj.image_url)
     pRating.setAttribute("id", "rating")
     spanStar.setAttribute("id", "star-rating")
@@ -57,12 +57,26 @@ const slapItOnTheDom = (animeObj) =>{
 
     collection.prepend(divSeries)
 
-    // animeDeleteBtn.addEventListener("click", () => deleteForever(animeObj))
+    animeDeleteBtn.addEventListener("click", () => deleteThis(animeObj))
 
     // animeUpdateBtn.addEventListener("click", (event) => showForm(animeObj))
 
     
 
+}
+
+const deleteThis = animeObj => {
+     let seriesBye = document.getElementById(`series-${animeObj.id}`)
+
+
+     return fetch(`http://localhost:3000/animes/${animeObj.id}`, {
+             method: "DELETE"
+         })
+         .then(res => res.json())
+         .then(() => {
+             seriesBye.remove()
+             console.log(`goodbye ${animeObj.id}`)
+         })
 }
 
 

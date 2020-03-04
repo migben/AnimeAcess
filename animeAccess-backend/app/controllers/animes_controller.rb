@@ -11,5 +11,11 @@ class AnimesController < ApplicationController
         render json: @anime
     end
 
+    def destroy
+        @anime = Anime.find(params[:id])
+        @anime.destroy
+        render json: { message: "I'll be back!" }
+    end
+
     
 end
