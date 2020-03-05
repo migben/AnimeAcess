@@ -33,6 +33,7 @@ const slapItOnTheDom = (animeObj) =>{
     const hrSeries = document.createElement("hr")
     const animeUpdateBtn = document.createElement("button")
     const animeDeleteBtn = document.createElement("button")
+    const mainHeaderList = document.querySelector("#h2-title")
 
     divSeries.setAttribute("id", `series-${animeObj.id}`)
     imgCover.setAttribute("src", animeObj.image_url)
@@ -63,7 +64,9 @@ const slapItOnTheDom = (animeObj) =>{
 
     // animeUpdateBtn.addEventListener("click", (event) => showForm(animeObj))
 
-    
+    // Mouseover and out, change colors
+    // mainHeaderList.addEventListener("mouseout", event => event.target.style.color = "red")  
+    // mainHeaderList.addEventListener("mouseover", event => event.target.style.color = "yellow")
 
 } // END OF THE RENDER TO THE DOM FUNCTION
 
