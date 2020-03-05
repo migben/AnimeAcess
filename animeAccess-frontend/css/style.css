@@ -52,14 +52,15 @@ hr {
 
 
 
-h2 a {
+a {
     color: #fe346e;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
+    display: block;
 }
 
-h2 a:hover {
+a:hover {
     color: #fff;
 }
 
